@@ -1,0 +1,112 @@
+{
+	"manifestVersion": 1,
+	"id": "leansoft-sample-extension",
+	"version": "0.1.5",
+	"name": "LeanSoft first sample",
+	
+ 	"publisher": "lean-soft",
+    "targets": [
+         {
+             "id": "Microsoft.VisualStudio.Services"
+         }
+    ],
+	"description": "A sample Visual Studio Services extension.",
+	"icons": {
+		"default":"images/logo.png"
+		},
+	"categories":"Plan and track",
+	"tags":[
+		"working",
+		"search"	
+	],
+	"screnshots":[
+		{
+			"path":"screenshots/screen1.png"
+		}
+	],
+	"content":{
+		"details":{
+			"path":"overview.md"
+		},
+		"license":{
+			"path":"license-terms.md"
+		}	
+	},
+	"links": {
+        "home": {
+            "uri": "https://devopshub.cn"
+        },
+        "getstarted": {
+            "uri": "https://devopshub.cn/help/getstarted"
+        },
+        "learn": {
+            "uri": "https://devopshub.cn/features"
+        },
+        "support": {
+            "uri": "https://devopshub.cn/support"
+        },
+        "repository": {
+            "uri": "https://devopshub.cn/myextension"
+        },
+        "issues": {
+            "uri": "hhttps://devopshub.cn/myextension/issues"
+        }
+    },
+	"branding": {
+        "color": "rgb(34, 34, 34)",
+        "theme": "dark"
+    },
+    "public": false,
+	"scopes":[
+		"vso.work",
+		"vso.work_write"
+	],
+	"contributions":[
+		{
+			"id":"LeanSoft.HelloWorld",
+			"type":"ms.vss-web.hub",
+			"description":"Adds a 'Hello' tab to the Work Hub group.",
+			"targets":[
+				"ms.vss-work-web.work-hub-group"	
+			],
+			"properties":{
+				"name": "Hello",
+				"order": 99,
+				"uri":"hello-world.html"
+			}
+		},
+		{
+            "id": "LeanSoft.HelloWorld.QueryMenuAction",
+            "type": "ms.vss-web.action",
+            "description": "Run in Hello hub action",
+            "targets": [
+                "ms.vss-work-web.work-item-query-menu"
+            ],
+            "properties": {
+                "text": "Run in Hello hub",
+                "title": "Run in Hello hub",
+                "icon": "images/icon.png",
+                "groupId": "actions",
+                "uri": "action.html",
+                "order": 99
+            }
+        } 
+	],
+	"files": [
+         {
+             "path": "hello-world.html", "addressable": true
+         },
+         {
+             "path": "sdk/scripts", "addressable": true
+         },
+         {
+             "path": "images/logo.png", "addressable": true
+         },
+         {
+             "path": "images/icon.png", "addressable": true
+         },
+         {
+             "path": "action.html", "addressable": true
+         }
+     ]	
+}
