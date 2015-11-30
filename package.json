@@ -1,7 +1,7 @@
 {
 	"manifestVersion": 1,
 	"id": "leansoft-sample-extension",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"name": "LeanSoft first sample",
 	
  	"publisher": "lean-soft",
@@ -107,6 +107,9 @@
          },
          {
              "path": "action.html", "addressable": true
+         },
+         {
+             "path": "context.html", "addressable": true
          }
      ]	
 }

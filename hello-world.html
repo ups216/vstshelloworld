@@ -2,7 +2,8 @@
 <html xmlns="http：//www.w3.org/1999/xhtml">
 <head>
 	<title>Hello World</title>
-	<script src="sdk/scripts/VSS.SDK.js"></script>	
+	<script src="sdk/scripts/VSS.SDK.js"></script>
+	<script src="sdk/scripts/jquery-1.11.3.min.js"></script>	
 </head>
 <body>
 	<script type="text/javascript">
@@ -63,5 +64,27 @@
 	<div id="grid-container">
 		
 	</div>
+	<button id="show" title="show dialog" onclick="showdiag();">Show Dialog</button>
+	<script type="text/javascript">
+	
+	function showdiag(){
+		VSS.getService(VSS.ServiceIds.Dialog).then(function(dialogService) {
+        var extensionCtx = VSS.getExtensionContext();
+        // Build absolute contribution id for dialogContent
+        var contributionId = extensionCtx.publisherId + "." + extensionCtx.extensionId + ".LeanSoft.context";
+		alert(contributionId);
+
+        // Show dialog
+        var dialogOptions = {
+            title: "My Dialog",
+            width: 800,
+            height: 600
+        };
+
+        dialogService.openDialog(contributionId, dialogOptions);
+    	});
+	}
+		
+	</script>
 </body>
 </html>
